@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chat IA Local</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="chat">
+
+        <header class="header">
+            <h1>Assistente IA</h1>
+            <p>Ollama + Gemma 3 4B</p>
+        </header>
+
+
+        <main id="messages" class="messages">
+
+            <div class="message ai">
+                Olá! 👋<br>
+                Estou rodando localmente com Ollama.
+            </div>
+
+        </main>
+
+
+        <form id="chatForm" class="input-area">
+
+            <input
+                id="question"
+                type="text"
+                placeholder="Digite sua pergunta..."
+                autocomplete="off"
+            >
+
+            <button type="submit">
+                Enviar
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
