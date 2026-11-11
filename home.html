@@ -1,0 +1,37 @@
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>HOME</h1>
+
+
+    <div class="profile">
+        <img class="thumb">
+        <div class="username">
+            ...
+        </div>
+    </div>
+
+
+<script>
+    async function init() {
+        const response = await fetch("/login/user", {
+            credentials: "include"
+        })
+        if (!response.ok){
+            alert("usuario não logado")
+            window.location.href = "/"
+            return
+        }
+        const data = await response.json
+        document.querySelector(".profile .username").textContent = data.username
+    }
+
+    init();
+</script>
+
+</body>
+</html> -->

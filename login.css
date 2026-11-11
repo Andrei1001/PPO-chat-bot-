@@ -1,0 +1,142 @@
+:root {
+    --bg: #f1f3f7;
+    --card: #ffffff;
+    --texto: #1c1e26;
+    --suave: #6b7280;
+    --borda: #dfe3ea;
+    --destaque: #4f46e5;
+    --destaque-2: #7c3aed;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #12141a;
+        --card: #1b1e27;
+        --texto: #e8eaf0;
+        --suave: #9aa1b2;
+        --borda: #2b2f3b;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.escolha {
+    width: 100%;
+    max-width: 380px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.escolha::before {
+    content: "🤖  Chat Bot";
+    grid-column: 1 / -1;
+    padding: 28px 0 12px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.escolha > button {
+    padding: 14px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--suave);
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.escolha > button:hover {
+    color: var(--texto);
+}
+
+.escolha > .abacate {
+    color: var(--texto);
+    border-bottom-color: var(--destaque);
+}
+
+.escolha:has(.cadastrar[style*="block"]) > .abacate {
+    color: var(--suave);
+    border-bottom-color: transparent;
+}
+
+.escolha:has(.cadastrar[style*="block"]) > .morango {
+    color: var(--texto);
+    border-bottom-color: var(--destaque);
+}
+
+.escolha form {
+    grid-column: 1 / -1;
+    padding: 24px;
+}
+
+.cadastrar {
+    display: none;
+}
+
+.escolha input {
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin-bottom: 14px;
+    padding: 0 16px;
+    font: inherit;
+    color: var(--texto);
+    background: var(--bg);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.escolha input::placeholder {
+    color: var(--suave);
+}
+
+.escolha input:focus {
+    border-color: var(--destaque);
+}
+
+.escolha form button {
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin-top: 6px;
+    font: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, var(--destaque), var(--destaque-2));
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.15s, filter 0.15s;
+}
+
+.escolha form button:hover {
+    filter: brightness(1.08);
+}
+
+.escolha form button:active {
+    transform: scale(0.98);
+}
